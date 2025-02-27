@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <!-- <link rel="stylesheet" type="css" href="./public/login.css"> -->
+
+    <style>
+          * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Courier New", Courier, monospace;
+      /* background-image: url(car2.jpg); background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    } */
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url("https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y2FyJTIwcmVudGFsfGVufDB8fDB8fHww&auto=format&fit=crop&w=1000&q=60");
+      background-size: cover;
+      background-position: center;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 99;
+      /* background-color: red; */
+    }
+
+    .logo {
+      font-size: 2em;
+      color: white;
+      user-select: none;
+    }
+
+    .navigation a {
+      position: relative;
+      font-size: 1.1em;
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 40px;
+    }
+
+    .navigation a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 3px;
+      background: white;
+      border-radius: 5px;
+      transform: scaleX(0);
+      transition: transform 0.5s;
+    }
+
+    .navigation a:hover:after {
+      transform: scaleX(1);
+    }
+
+    .navigation .btnLogin-popup {
+      width: 160px;
+      height: 50px;
+      background: transparent;
+      /* border: 2px solid white; */
+      outline: none;
+      /* border-radius: 6px; */
+      cursor: pointer;
+      font-size: 1.1em;
+      color: black;
+      font-weight: 500;
+      margin-left: 40px;
+      transition: 0.5s;
+    }
+    .error-message {
+      display: none;
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+
+    .navigation .btnLogin-popup:hover {
+      /* background-color: white; */
+      color: #162338;
+    }
+
+    .wrapper {
+      position: relative;
+      width: 400px;
+      height: 440px;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-radius: 20px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: height 0.2s ease;
+    }
+    .wrapper .icon-close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 45px;
+      height: 45px;
+      background: #162938;
+      color: white;
+      font-size: 2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom-left-radius: 20px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .form-box h2 {
+      font-size: 2em;
+      color: #162938;
+      text-align: center;
+    }
+    .input-box {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      border-bottom: 2px solid #162938;
+      margin: 30px 0;
+    }
+
+    .input-box label {
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      transform: translateY(-50%);
+      font-size: 1em;
+      color: #162938;
+      font-weight: 500;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+
+    .input-box input:focus ~ label,
+    .input-box input:not(:placeholder-shown) ~ label {
+      top: -5px;
+      font-size: 0.8em;
+      /* color: #999; */
+    }
+
+    .input-box input {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 1em;
+      color: #162938;
+      font-weight: 600;
+      padding: 0 35px 0 5px;
+    }
+
+    .input-box .icon {
+      position: absolute;
+      right: 8px;
+      font-size: 1.2em;
+      color: #162938;
+      line-height: 57px;
+    }
+
+    .remember-forgot {
+      font-size: 0.9em;
+      color: #162938;
+      font-weight: 500;
+      margin: -15px 0 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .remember-forgot label input {
+      accent-color: #162938;
+      margin-right: 3px;
+    }
+
+    .remember-forgot a {
+      color: #162938;
+      text-decoration: none;
+    }
+
+    .remember-forgot a:hover {
+      text-decoration: underline;
+    }
+
+    .btn {
+      width: 100%;
+      height: 45px;
+      background: #162938;
+      border: none;
+      outline: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      color: white;
+      font-weight: 500;
+    }
+
+    .login-register {
+      font-size: 0.9em;
+      color: #162938;
+      text-align: center;
+      font-weight: 500;
+      margin: 25px 0 10px;
+    }
+
+    .login-register p a {
+      color: #162938;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .login-register p a:hover {
+      text-decoration: underline;
+    }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      
+      <div class="logo">
+        <a href="#"><img src="data:image/png;base64,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"alt="logo" width="100" height="50" /></a>
+      </div>
+      
+      <nav class="navigation">
+        <a href="header.html">Home</a>
+        <a href="cont.html ">Contact</a>
+        <a href="signup.html" id="btnLoginPopup" class="btnLogin-popup"
+          >Sign Up</a
+        >
+      </nav>
+    </header>
+
+    <div class="wrapper">
+      <span class="icon-close"><ion-icon name="close-outline"></ion-icon></span>
+
+      <div class="form-box login">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+          <div class="input-box">
+            <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+            <input type="email" name="email" required />
+            <label>Email</label>
+          </div>
+          <div class="input-box">
+            <span class="icon"
+              ><ion-icon name="lock-closed-outline"></ion-icon
+            ></span>
+            <input type="password" name="password" required />
+            <label>Password</label>
+          </div>
+          <div class="remember-forgot">
+            <label> <input type="checkbox" />Remember me </label>
+            <a href="#">Forgot Password</a>
+          </div>
+          <button type="submit" class="btn">Login</button>
+          <div class="login-register">
+            <p>
+              Don't have an account?
+              <a href="signup.html" class="register-link">Register now</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // const queryString = window.location.search;
+      // const urlParams = new URLSearchParams(queryString);
+      // const error = urlParams.get('error');
+      // if (error) {
+      //     alert(error);
+      // }
+
+      window.addEventListener("load", () => {
+        const queryString = new URL(window.location.href);
+        const urlParams = new URLSearchParams(queryString);
+        const error = urlParams.get("error");
+        if (error) {
+          // errorMessage.textContent = error;
+          // Display an alert
+          alert(error);
+          // Clear the error query parameter
+          // clearErrorQueryParam();
+        }
+      });
+
+    </script>
+
+    <!-- <script src="login.js"></script> -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

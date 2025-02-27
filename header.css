@@ -1,0 +1,354 @@
+/* Navbar styles */
+.navbar {
+  /* background-color: blue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+body {
+  padding: 0%;
+  margin: 0%;
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+}
+
+/* Adjust the logo size */
+.logo img {
+  width: 100px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: BLACK;
+  font-weight: bold;
+}
+
+.login-signin {
+  color: #fff;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Media query for mobile menu toggle */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+.background-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* animation: changeBackground 5s linear infinite; */
+}
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 0px 0px 0px 1050px;
+}
+
+.horizontal-container {
+  display: flex; /* Display children horizontally */
+  align-items: center; /* Vertically center the items */
+}
+
+select,
+input[type="date"],
+button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 500px;
+}
+
+button {
+  background-color: green;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-left: 15px;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-between; /* Distribute items horizontally */
+  list-style-type: none;
+  padding: 0px 0px 0px 1050px;
+  max-width: 800px;
+}
+
+/* CSS for the list items */
+.flex-item {
+  flex: 1; /* Equal width for each item */
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+}
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.car-list-card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.car-list-card {
+  border-radius: 18px;
+  border: 1px solid lightgray;
+  border-top: none;
+  cursor: pointer;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  width: 300px; /* Adjust the width as needed */
+  margin: 20px; /* Adjust the margin as needed */
+}
+
+.car-list-card-image img {
+  height: 100%;
+  width: 100%;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.car-list-card-description {
+  padding: 20px;
+}
+
+.car-list-card-description-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.car-list-card-description-reviews {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.car-list-card-description-reviews-icon img {
+  height: 20px;
+  margin-right: 5px;
+}
+
+.car-list-card-description-reviews-value {
+  font-weight: bold;
+}
+
+.car-list-card-description-properties-property {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.property-point {
+  width: 5px;
+  height: 5px;
+  background-color: gray;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.car-list-card-price-distance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.car-list-card-price {
+  text-align: left;
+}
+
+.car-list-card-price-availability-text {
+  font-size: 12px;
+  color: gray;
+}
+
+.car-list-card-price-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.car-list-card-distance {
+  text-align: right;
+}
+
+.car-list-card-distance img {
+  height: 20px;
+  margin-right: 5px;
+}
+
+.car-list-card-distance-place {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+footer {
+  /* background-color: #666; */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-new-logo-qr {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+.footer-new-logo-qr-logo {
+  text-align: center;
+}
+
+.footer-new-logo-qr-logo-text {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0;
+  padding-left: 50px;
+}
+
+.footer-new-logo-qr-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align items vertically */
+}
+
+.footer-new-logo-qr-qr-desc {
+  text-align: center;
+  flex-grow: 1; /* Grow to take available vertical space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+}
+
+.footer-new-logo-qr-qr-desc-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.footer-new-logo-qr-qr-desc-description {
+  font-size: 17px;
+  margin: 0;
+}
+
+.footer-new-logo-qr-qr-desc-buttons {
+  margin-top: 10px;
+}
+
+.playstore-icons {
+  font-size: 24px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.app-store-link {
+  margin-right: 40px; /* Add spacing (adjust as needed) */
+}
+.footer-new-copyright {
+  font-style: normal;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  color: #fff;
+  font-family: "IBM Plex Sans";
+  box-sizing: inherit;
+  background-color: #666;
+  padding: 24px 84px;
+}
+
+.footer-new-location-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-new-location-social-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.footer-new-location-social-icons {
+  display: flex;
+  justify-content: center; /* Center the icons horizontally */
+  align-items: center; /* Center the icons vertically */
+}
+
+.social-icons {
+  width: 52px;
+  height: 52px;
+  margin: 0 10px; /* Add spacing between icons */
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensure the icons are properly sized */
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.social-icons.instagram {
+  background-image: url("./instagram\ \(1\).png");
+}
+
+.social-icons.youtube {
+  background-image: url("./threads.png");
+}
+
+.social-icons.facebook {
+  background-image: url("./facebook.png");
+}
